@@ -1,0 +1,177 @@
+body {
+  margin: 20px;
+}
+
+#ALPHABETS,
+#NUMBERS,
+#DROP_ALPHABETS,
+#DROP_NUMBERS {
+  margin-right: 10px;
+  padding: 10px;
+  width: 285px;
+  height: 365px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+#DROP_ALPHABETS,
+#DROP_NUMBERS {
+  background-color: #fafafa;
+}
+
+#ALPHABETS div,
+#NUMBERS div,
+#DROP_ALPHABETS div,
+#DROP_NUMBERS div {
+  margin: 5px;
+  width: 42px;
+  height: 40px;
+  cursor: pointer;
+  float: left;
+  background-image: url(../images/items.png);
+}
+
+.drop-ok {
+  background-image: url(../images/items-over.png) !important;
+}
+
+div.alp_a {
+  background-position: 0 0;
+}
+
+div.alp_b {
+  background-position: -42px 0;
+}
+
+div.alp_c {
+  background-position: -84px 0;
+}
+
+div.alp_d {
+  background-position: -126px 0;
+}
+
+div.alp_e {
+  background-position: -168px 0;
+}
+
+div.alp_f {
+  background-position: 0 -40px;
+}
+
+div.alp_g {
+  background-position: -42px -40px;
+}
+
+div.alp_h {
+  background-position: -84px -40px;
+}
+
+div.alp_i {
+  background-position: -126px -40px;
+}
+
+div.alp_j {
+  background-position: -168px -40px;
+}
+
+div.alp_k {
+  background-position: 0 -80px;
+}
+
+div.alp_l {
+  background-position: -42px -80px;
+}
+
+div.alp_m {
+  background-position: -84px -80px;
+}
+
+div.alp_n {
+  background-position: -126px -80px;
+}
+
+div.alp_o {
+  background-position: -168px -80px;
+}
+
+div.alp_p {
+  background-position: 0 -120px;
+}
+
+div.alp_q {
+  background-position: -42px -120px;
+}
+
+div.alp_r {
+  background-position: -84px -120px;
+}
+
+div.alp_s {
+  background-position: -126px -120px;
+}
+
+div.alp_t {
+  background-position: -168px -120px;
+}
+
+div.alp_u {
+  background-position: 0 -160px;
+}
+
+div.alp_v {
+  background-position: -42px -160px;
+}
+
+div.alp_w {
+  background-position: -84px -160px;
+}
+
+div.alp_x {
+  background-position: -126px -160px;
+}
+
+div.alp_y {
+  background-position: -168px -160px;
+}
+
+div.alp_z {
+  background-position: 0 -200px;
+}
+
+div.num_1 {
+  background-position: 0 -240px;
+}
+
+div.num_2 {
+  background-position: -42px -240px;
+}
+
+div.num_3 {
+  background-position: -84px -240px;
+}
+
+div.num_4 {
+  background-position: -126px -240px;
+}
+
+div.num_5 {
+  background-position: -168px -240px;
+}
+
+div.num_6 {
+  background-position: 0 -280px;
+}
+
+div.num_7 {
+  background-position: -42px -280px;
+}
+
+div.num_8 {
+  background-position: -84px -280px;
+}
+
+div.num_9 {
+  background-position: -126px -280px;
+}
+
