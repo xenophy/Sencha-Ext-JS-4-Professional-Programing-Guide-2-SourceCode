@@ -1,0 +1,9 @@
+body {
+  margin: 20px;
+}
+
+#tree,
+#tree2 {
+    float: left;
+    margin: 20px;
+}
