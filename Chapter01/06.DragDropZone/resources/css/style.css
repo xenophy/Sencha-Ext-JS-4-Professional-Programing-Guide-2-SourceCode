@@ -1,0 +1,32 @@
+body {
+  margin: 20px;
+}
+
+#BOXES {
+  padding: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+#DROPZONE {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  margin: 0 0 0 20px;
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+.box {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  padding: 5px;
+  float: left;
+  border: 2px solid #ccc;
+  background-color: #eee;
+}
