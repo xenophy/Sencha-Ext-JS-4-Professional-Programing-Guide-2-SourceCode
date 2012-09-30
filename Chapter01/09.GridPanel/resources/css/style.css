@@ -1,0 +1,9 @@
+body {
+  margin: 20px;
+}
+
+#grid,
+#grid2 {
+    float: left;
+    margin: 20px;
+}

@@ -1,0 +1,26 @@
+body {
+  margin: 20px;
+}
+
+#view,
+#view2 {
+  float: left;
+  margin: 20px;
+}
+
+.thumb-wrap {
+  width: 142px;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 2px solid #ddd;
+  cursor: pointer;
+}
+
+.x-item-over,
+.x-item-selected {
+  background-color: #dff7ff;
+  border: 2px solid #1f8eb2;
+}
+
