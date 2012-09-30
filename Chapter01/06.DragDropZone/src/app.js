@@ -1,5 +1,6 @@
 Ext.onReady(function() {
-    new Ext.dd.DragZone('BOXES', {
+    var drag, drop;
+    drag = {
         ddGroup: 'ddBoxes',
         getDragData: function(e) {
             var t = e.getTarget('div.box');
@@ -7,8 +8,8 @@ Ext.onReady(function() {
                 return {ddel: t};
             }
         }
-    });
-    new Ext.dd.DropZone('DROPZONE', {
+    };
+    drop = {
         ddGroup: 'ddBoxes',
         onContainerOver: function() {
             return Ext.dd.DropZone.prototype.dropAllowed;
@@ -17,5 +18,9 @@ Ext.onReady(function() {
             this.getEl().appendChild(data.ddel);
             Ext.fly(data.ddel).highlight();
         }
-    });
+    };
+    new Ext.dd.DragZone('BOXES', drag);
+    new Ext.dd.DragZone('DROPZONE', drag);
+    new Ext.dd.DropZone('BOXES', drop);
+    new Ext.dd.DropZone('DROPZONE', drop);
 });
