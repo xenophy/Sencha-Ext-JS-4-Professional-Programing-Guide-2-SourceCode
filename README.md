@@ -1,11 +1,8 @@
 Sencha Ext JS 4 実践開発ガイド２ ソースコード
 =============================================
 
-![Alt text](./cover.jpg)
+[Ext JSのソースコード](http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js "Ext JSのソースコード")は、オンラインから取得しています。
 
-Ext JSのソースコードはオンラインから取得しています。
-
-http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js
 
 ## 第1章 ドラッグアンドドロップ
 
