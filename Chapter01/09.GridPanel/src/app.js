@@ -101,6 +101,20 @@ Ext.onReady(function() {
             plugins: {
                 ptype: 'ux.gridviewdragdrop'
             }
+            /*
+            plugins: {
+                ptype: 'gridviewdragdrop'
+            },
+            listeners: {
+                drop: function(node, data, dropRec, dropPosition) {
+                    Ext.iterate(data.records, function(r) {
+                        if(r.data.name === '納豆巻き') {
+                            alert('納豆巻きは、食べられません。\n元に戻してください。');
+                        }
+                    });
+                }
+            }
+            */
         },
         store: orderGridStore,
         columns: columns,
