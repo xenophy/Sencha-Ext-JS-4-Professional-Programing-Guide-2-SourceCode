@@ -41,7 +41,7 @@ Ext.onReady(function() {
     ];
 
     Ext.widget('panel', {
-        title: 'メニュー一覧',
+        title: 'メニュー',
         width: 490,
         height: 395,
         renderTo: 'view',
