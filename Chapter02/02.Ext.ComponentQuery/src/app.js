@@ -21,11 +21,11 @@ Ext.onReady(function() {
     // ドキュメント内に存在する全てのExt.Panelを配列で取得します。
     var panelsArray = Ext.ComponentQuery.query('panel');
 
-    // pコンテナーの最初のコンポーネントを取得します。
+    // pコンテナーの最初のパネルを取得します。
     // 階層は関係ありません。
     p.down('panel');
 
-    // pコンテナー直下の最初のコンポーネントを取得します。
+    // pコンテナー直下の最初のパネルを取得します。
     p.child('panel');
 
     // north,centerの2つのパネルを取得します。
