@@ -11,12 +11,12 @@ Ext.onReady(function() {
             text: 'ボタン2'
         }, {
             text: '保存',
-            itemId: 'saveBottun'
+            itemId: 'saveButton'
         }],
         buttons: [{
             text: '実行',
             handler: function() {
-                var ret = p.query('toolbar[dock=top] button#saveBottun');
+                var ret = p.query('toolbar[dock=top] button#saveButton');
                 Ext.iterate(ret, function(btn) {
                     btn.getEl().highlight();
                 });
