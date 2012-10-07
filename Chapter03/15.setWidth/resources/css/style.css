@@ -1,0 +1,12 @@
+body {
+  margin: 20px;
+  background-color: #eee;
+}
+
+#anim {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  background-color: #ffcccc;
+}
