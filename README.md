@@ -1,6 +1,8 @@
 Sencha Ext JS 4 実践開発ガイド２ ソースコード
 =============================================
 
+[Cover]: http://d3j5vwomefv46c.cloudfront.net/photos/full/670030573.jpg?key=450631&Expires=1349896531&Key-Pair-Id=APKAIYVGSUJFNRFZBBTA&Signature=beMWp8xqh6UIvi54RB~RbkNglOd1DOBw9LVzUe4oYdbE4cl6nD5Qbnij507CFuneromip8Hqt9XuMls4BsNJhs1iS8sGeod4OF3P11aSJR6-4Tefmx4-3YMFkub2TO0BjWDaZiPK6OxruZhdW5OJsNMGxLcEP12N3INmgnz~3Dc_
+
 [Ext JSのソースコード](http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js "Ext JSのソースコード")は、オンラインから取得しています。
 
 ## 第1章 ドラッグアンドドロップ
