@@ -83,8 +83,12 @@ Sencha Ext JS 4 実践開発ガイド２ ソースコード
  * [07.FormPanel2](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter05/07.FormPanel2 "07.FormPanel2")
  * [08.Upload](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter05/08.Upload "08.Upload")
 
-## 第6章 キーボード制御とアクセシビリティ
+## 第6章 キーボード制御
 
+ * [01.FocusManager](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter06/01.FocusManager "01.FocusManager")
+ * [02.KeyNav](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter06/02.KeyNav "02.KeyNav")
+ * [03.KeyMap](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter06/03.KeyMap "03.KeyMap")
+ * [04.defaultEventAction](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter06/04.defaultEventAction "04.defaultEventAction")
 
 ## 第7章 MVCアプリケーション
 
