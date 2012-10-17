@@ -103,3 +103,17 @@ Sencha Ext JS 4 実践開発ガイド２ ソースコード
 
 ## 第8章 コンポーネントテスト
 
+ * [01.ComponentTest](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter08/01.ComponentTest "01.ComponentTest")
+ * [02.Jasmine](https://github.com/xenophy/Sencha-Ext-JS-4-Professional-Programing-Guide-2-SourceCode/tree/master/Chapter08/02.Jasmine "02.Jasmine")
+
+
+## 第9章 デバッグとリリース
+
+
+## 第10章 Ext JS 4.1の新機能
+
+
+## 第11章 ユーザー管理システム構築
+
+
+
