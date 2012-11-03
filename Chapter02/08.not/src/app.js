@@ -24,7 +24,8 @@ Ext.onReady(function() {
         buttons: [{
             text: '実行',
             handler: function() {
-                Ext.iterate(p.query('textfield:not([disabled])'), function(item, i) {
+                var ret = p.query('textfield:not([disabled])');
+                Ext.iterate(ret, function(item, i) {
                     item.getEl().frame("green");
                 });
             }

@@ -28,11 +28,15 @@ Ext.define('Ext.ux.grid.plugin.DragDrop', {
                         return me.dropNotAllowed;
                     }
                     if (count) {
-                        me.positionIndicator(view.getNode(count - 1), data, e);
+                        me.positionIndicator(
+                            view.getNode(count - 1), data, e
+                        );
                     } else {
                         delete me.overRecord;
                         delete me.currentPosition;
-                        me.getIndicator().setWidth(Ext.fly(view.el).getWidth()).showAt(0, 0);
+                        me.getIndicator().setWidth(
+                            Ext.fly(view.el).getWidth()
+                        ).showAt(0, 0);
                         me.valid = true;
                     }
                     return me.dropAllowed;

@@ -24,7 +24,8 @@ Ext.onReady(function() {
         buttons: [{
             text: '実行',
             handler: function() {
-                Ext.iterate(p.query('{isDisabled()}'), function(item, i) {
+                var items = p.query('{isDisabled()}');
+                Ext.iterate(items, function(item, i) {
                     item.enable();
                 });
             }

@@ -8,15 +8,20 @@ Ext.onReady(function() {
     var menuStore = Ext.create('Ext.data.Store', {
         model: 'SusiObject',
         data: [{
-            id: 'tamago', name: '玉子', price: 160, url: './resources/images/tamago.png'
+            id: 'tamago', name: '玉子', price: 160,
+            url: './resources/images/tamago.png'
         }, {
-            id: 'kanpyo', name: 'かんぴょう巻', price: 260, url: './resources/images/kanpyo.png'
+            id: 'kanpyo', name: 'かんぴょう巻', price: 260,
+            url: './resources/images/kanpyo.png'
         }, {
-            id: 'ikura', name: 'いくら', price: 260, url: './resources/images/ikura.png'
+            id: 'ikura', name: 'いくら', price: 260,
+            url: './resources/images/ikura.png'
         }, {
-            id: 'saba', name: 'しめ鯖', price: 160, url: './resources/images/saba.png'
+            id: 'saba', name: 'しめ鯖', price: 160,
+            url: './resources/images/saba.png'
         }, {
-            id: 'samon', name: 'とろサーモン', price: 260, url: './resources/images/samon.png'
+            id: 'samon', name: 'とろサーモン', price: 260,
+            url: './resources/images/samon.png'
         }]
     });
 
@@ -56,7 +61,9 @@ Ext.onReady(function() {
                 tpl: [
                     '<tpl for=".">',
                     '<div class="thumb-wrap" id="{id}">',
-                    '<div class="thumb"><img src="{url}" title="{name}"></div>',
+                    '<div class="thumb">',
+                    '<img src="{url}" title="{name}">',
+                    '</div>',
                     '<span>{name}</span></div>',
                     '</tpl>',
                     '<div class="x-clear"></div>'
@@ -71,6 +78,39 @@ Ext.onReady(function() {
         ]
     });
 
+    function onAfterRender(view) {
+        view.dropZone = Ext.create('Ext.dd.DropZone', view.getEl(), {
+            ddGroup : 'sushiDD',
+            onContainerDrop: function(source, e, data) {
+                var store = view.getStore(), records, i, len;
+                if (data.copy) {
+                    records = data.records;
+                    data.records = [];
+                    for (i = 0, len = records.length; i < len; i++) {
+                        data.records.push(
+                            records[i].copy(records[i].getId())
+                        );
+                    }
+                } else {
+                    data.view.store.remove(
+                        data.records, data.view === view
+                    );
+                }
+                store.insert(store.getCount(), data.records);
+                view.getSelectionModel().select(data.records);
+                Ext.iterate(data.records, function(r) {
+                    menuStore.remove(menuStore.getById(r.internalId));
+                });
+                return true;
+            },
+            onContainerOver : function() {
+                var me = this;
+                return me.dropAllowed;
+            }
+        });
+
+    }
+
     Ext.widget('panel', {
         title: '注文一覧',
         width: 490,
@@ -83,7 +123,9 @@ Ext.onReady(function() {
                 tpl: [
                     '<tpl for=".">',
                     '<div class="thumb-wrap" id="{id}">',
-                    '<div class="thumb"><img src="{url}" title="{name}"></div>',
+                    '<div class="thumb">',
+                    '<img src="{url}" title="{name}">',
+                    '</div>',
                     '<span>{name}</span></div>',
                     '</tpl>',
                     '<div class="x-clear"></div>'
@@ -95,35 +137,9 @@ Ext.onReady(function() {
                 itemSelector: 'div.thumb-wrap',
                 emptyText: '商品がありません。',
                 listeners: {
-                    afterrender: function(view) {
-                        view.dropZone = Ext.create('Ext.dd.DropZone', view.getEl(), {
-                            ddGroup : 'sushiDD',
-                            onContainerDrop: function(source, e, data) {
-                                var store = view.getStore(), records, i, len;
-                                if (data.copy) {
-                                    records = data.records;
-                                    data.records = [];
-                                    for (i = 0, len = records.length; i < len; i++) {
-                                        data.records.push(records[i].copy(records[i].getId()));
-                                    }
-                                } else {
-                                    data.view.store.remove(data.records, data.view === view);
-                                }
-                                store.insert(store.getCount(), data.records);
-                                view.getSelectionModel().select(data.records);
-                                Ext.iterate(data.records, function(r) {
-                                    menuStore.remove(menuStore.getById(r.internalId));
-                                });
-                                return true;
-                            },
-                            onContainerOver : function() {
-                                var me = this;
-                                return me.dropAllowed;
-                            }
-                        });
-
-                    }
+                    afterrender: onAfterRender
                 }
+
             })
         ]
     });

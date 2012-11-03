@@ -22,8 +22,11 @@ Ext.onReady(function() {
         buttons: [{
             text: '実行',
             handler: function() {
-                Ext.iterate(p.query('.textfield'), function(item, i) {
-                    item.setValue(Ext.String.format(".textfield{0}", i));
+                var items = p.query('.textfield');
+                Ext.iterate(items, function(item, i) {
+                    item.setValue(
+                        Ext.String.format(".textfield{0}", i)
+                    );
                 });
             }
         }]
