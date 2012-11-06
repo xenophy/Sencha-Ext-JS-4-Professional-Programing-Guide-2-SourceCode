@@ -1,0 +1,25 @@
+table.cellulars {
+  width: 100%;
+}
+
+table.cellulars th,
+table.cellulars td {
+  padding: 5px;
+  border: 2px solid #04408c;
+}
+
+table.cellulars th {
+  background-color: #6e9ad2;
+  color: white;
+  font-weight: bold;
+}
+
+table.cellulars td.name,
+table.cellulars td.num {
+  background-color: #d7e5f5;
+  font-weight: bold;
+}
+
+table.cellulars td.count {
+  text-align: right;
+}
