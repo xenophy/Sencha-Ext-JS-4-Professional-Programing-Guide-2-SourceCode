@@ -1,5 +1,6 @@
 Ext.onReady(function() {
     var overrides = {
+        /*
         isTarget: false,
         alignElWithMouse: function(el, iPageX, iPageY) {
             var oCoord = this.getTargetCoord(iPageX, iPageY),
@@ -13,12 +14,8 @@ Ext.onReady(function() {
                     height: EL.getDocumentHeight()
                 };
                 var aCoord = [
-                    Math.max(0, Math.min(
-                        oCoord.x, vpSize.width - elSize.width
-                    )),
-                    Math.max(0, Math.min(
-                        oCoord.y, vpSize.height - elSize.height
-                    ))
+                    Math.max(0, Math.min(oCoord.x, vpSize.width - elSize.width)),
+                    Math.max(0, Math.min(oCoord.y, vpSize.height - elSize.height))
                 ];
                 fly.setXY(aCoord);
                 var newLeft = fly.getLeft(true);
@@ -27,33 +24,17 @@ Ext.onReady(function() {
             } else {
                 vpSize = this.cachedViewportSize;
                 fly.setLeftTop(
-                    Math.min(
-                        oCoord.x + this.deltaSetXY[0],
-                        vpSize.width - elSize.width
-                    ),
-                    Math.min(
-                        oCoord.y + this.deltaSetXY[1],
-                        vpSize.height - elSize.height
-                    )
-                    //Math.max(0, Math.min(
-                    //    oCoord.x + this.deltaSetXY[0],
-                    //    vpSize.width - elSize.width
-                    //)),
-                    //Math.max(0, Math.min(
-                    //    oCoord.y + this.deltaSetXY[1],
-                    //    vpSize.height - elSize.height
-                    //))
+                    Math.min(oCoord.x + this.deltaSetXY[0], vpSize.width - elSize.width),
+                    Math.min(oCoord.y + this.deltaSetXY[1], vpSize.height - elSize.height)
+                    //Math.max(0, Math.min(oCoord.x + this.deltaSetXY[0], vpSize.width - elSize.width)),
+                    //Math.max(0, Math.min(oCoord.y + this.deltaSetXY[1], vpSize.height - elSize.height))
                 );
             }
             this.cachePosition(oCoord.x, oCoord.y);
-            this.autoScroll(
-                oCoord.x,
-                oCoord.y,
-                el.offsetHeight,
-                el.offsetWidth
-            );
+            this.autoScroll(oCoord.x, oCoord.y, el.offsetHeight, el.offsetWidth);
             return oCoord;
         },
+        */
         b4StartDrag: function() {
             var me = this, el = me.el;
             if(!el) {
@@ -119,21 +100,10 @@ Ext.onReady(function() {
     Ext.get('NUMBERS').select('div').each(function(el) {
         Ext.apply(el.initDD('numberDDGroup'), overrides);
     });
-    var alphabetDDTarget,
-        numberDDTarget,
-        dropAlphabetDDTarget,
-        dropNumberDDTarget;
-
-    alphabetDDTarget = new Ext.dd.DDTarget(
-        'ALPHABETS', 'alphabetDDGroup'
-    );
-    numberDDTarget = new Ext.dd.DDTarget(
-        'NUMBERS', 'numberDDGroup'
-    );
-    dropAlphabetDDTarget = new Ext.dd.DDTarget(
-        'DROP_ALPHABETS', 'alphabetDDGroup'
-    );
-    dropNumberDDTarget = new Ext.dd.DDTarget(
-        'DROP_NUMBERS', 'numberDDGroup'
-    );
+    var alphabetDDTarget, numberDDTarget,
+        dropAlphabetDDTarget, dropNumberDDTarget;
+    alphabetDDTarget = new Ext.dd.DDTarget('ALPHABETS', 'alphabetDDGroup');
+    numberDDTarget = new Ext.dd.DDTarget('NUMBERS', 'numberDDGroup');
+    dropAlphabetDDTarget = new Ext.dd.DDTarget('DROP_ALPHABETS', 'alphabetDDGroup');
+    dropNumberDDTarget = new Ext.dd.DDTarget('DROP_NUMBERS', 'numberDDGroup');
 });

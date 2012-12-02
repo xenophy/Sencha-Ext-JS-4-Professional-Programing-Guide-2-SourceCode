@@ -10,24 +10,21 @@ Ext.onReady(function() {
             anchor: '100%'
         },
         items: [{
-            mark: 0,
+            mark: true,
             fieldLabel: 'TextField1'
         }, {
-            mark: 1,
             fieldLabel: 'TextField2'
         }, {
-            mark: 2,
+            mark: true,
             fieldLabel: 'TextField3'
         }, {
-            mark: 3,
             xtype: 'textarea',
             fieldLabel: 'TextArea1'
         }],
         buttons: [{
             text: '実行',
             handler: function() {
-                var items = p.query('[mark=1]');
-                Ext.iterate(items, function(item, i) {
+                Ext.iterate(p.query('[mark]'), function(item, i) {
                     item.setValue(Ext.String.format('mark{0}', i));
                 });
             }

@@ -22,8 +22,7 @@ Ext.onReady(function() {
         buttons: [{
             text: '実行',
             handler: function() {
-                var ret = p.query('textfield(true):last');
-                Ext.iterate(ret, function(item, i) {
+                Ext.iterate(p.query('textfield(true):last'), function(item, i) {
                     item.getEl().frame("green");
                 });
             }

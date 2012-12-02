@@ -35,8 +35,7 @@ Ext.onReady(function() {
         buttons: [{
             text: '実行',
             handler: function() {
-                var ret = p.query('textfield:ext4versions');
-                Ext.iterate(ret, function(item, i) {
+                Ext.iterate(p.query('textfield:ext4versions'), function(item, i) {
                     item.getEl().frame("green");
                 });
             }

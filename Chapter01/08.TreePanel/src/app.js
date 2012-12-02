@@ -23,63 +23,50 @@ Ext.define('Ext.ux.tree.plugin.TreeViewDragDrop', {
                 expandDelay: me.expandDelay,
                 dropHighlightColor: me.nodeHighlightColor,
                 dropHighlight: me.nodeHighlightOnDrop,
-                onNodeOver : me.onNodeOver
+                onNodeOver : function(node, dragZone, e, data) {
+                    var position = this.getPosition(e, node),
+                        returnCls = this.dropNotAllowed,
+                        view = this.view,
+                        targetNode = view.getRecord(node),
+                        targetGroup = (targetNode.raw ? targetNode.raw.group : null),
+                        nodeType = data.records[0].raw.type,
+                        indicator = this.getIndicator(),
+                        indicatorX = 0,
+                        indicatorY = 0;
+                    this.cancelExpand();
+                    if(nodeType !== targetGroup) {
+                        return returnCls;
+                    }
+                    if(position == 'append' && !this.expandProcId && !Ext.Array.contains(data.records, targetNode) && !targetNode.isLeaf() && !targetNode.isExpanded()) {
+                        this.queueExpand(targetNode);
+                    }
+                    if (this.isValidDropPoint(node, position, dragZone, e, data)) {
+                        this.valid = true;
+                        this.currentPosition = position;
+                        this.overRecord = targetNode;
+                        indicator.setWidth(Ext.fly(node).getWidth());
+                        indicatorY = Ext.fly(node).getY() - Ext.fly(view.el).getY() - 1;
+                        if (position == 'before') {
+                            returnCls = targetNode.isFirst() ? Ext.baseCSSPrefix + 'tree-drop-ok-above' : Ext.baseCSSPrefix + 'tree-drop-ok-between';
+                            indicator.showAt(0, indicatorY);
+                            dragZone.proxy.show();
+                        } else if (position == 'after') {
+                            returnCls = targetNode.isLast() ? Ext.baseCSSPrefix + 'tree-drop-ok-below' : Ext.baseCSSPrefix + 'tree-drop-ok-between';
+                            indicatorY += Ext.fly(node).getHeight();
+                            indicator.showAt(0, indicatorY);
+                            dragZone.proxy.show();
+                        } else {
+                            returnCls = Ext.baseCSSPrefix + 'tree-drop-ok-append';
+                            indicator.hide();
+                        }
+                    } else {
+                        this.valid = false;
+                    }
+                    this.currentCls = returnCls;
+                    return returnCls;
+                }
             });
         }
-    },
-    onNodeOver: function(node, dragZone, e, data) {
-        var position = this.getPosition(e, node),
-            returnCls = this.dropNotAllowed,
-            view = this.view,
-            targetNode = view.getRecord(node),
-            targetGroup = (targetNode.raw ? targetNode.raw.group : null),
-            nodeType = data.records[0].raw.type,
-            indicator = this.getIndicator(),
-            indicatorX = 0,
-            indicatorY = 0;
-        this.cancelExpand();
-        if(nodeType !== targetGroup) {
-            return returnCls;
-        }
-        if(
-            position == 'append' &&
-            !this.expandProcId &&
-            !Ext.Array.contains(data.records, targetNode) &&
-            !targetNode.isLeaf() && !targetNode.isExpanded()
-        ) {
-            this.queueExpand(targetNode);
-        }
-        if (this.isValidDropPoint(node, position, dragZone, e, data)) {
-            this.valid = true;
-            this.currentPosition = position;
-            this.overRecord = targetNode;
-            indicator.setWidth(Ext.fly(node).getWidth());
-            indicatorY =
-                Ext.fly(node).getY() - Ext.fly(view.el).getY() - 1;
-            if (position == 'before') {
-                returnCls =
-                    targetNode.isFirst() ?
-                    Ext.baseCSSPrefix + 'tree-drop-ok-above' :
-                    Ext.baseCSSPrefix + 'tree-drop-ok-between';
-                indicator.showAt(0, indicatorY);
-                dragZone.proxy.show();
-            } else if (position == 'after') {
-                returnCls =
-                    targetNode.isLast() ?
-                    Ext.baseCSSPrefix + 'tree-drop-ok-below' :
-                    Ext.baseCSSPrefix + 'tree-drop-ok-between';
-                indicatorY += Ext.fly(node).getHeight();
-                indicator.showAt(0, indicatorY);
-                dragZone.proxy.show();
-            } else {
-                returnCls = Ext.baseCSSPrefix + 'tree-drop-ok-append';
-                indicator.hide();
-            }
-        } else {
-            this.valid = false;
-        }
-        this.currentCls = returnCls;
-        return returnCls;
     }
 });
 

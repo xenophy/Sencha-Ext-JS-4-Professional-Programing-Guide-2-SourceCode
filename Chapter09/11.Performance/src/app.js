@@ -30,32 +30,18 @@ Ext.onReady(function() {
 
     // ----
 
+
     console.time('measure');
     for(var y=0;y<loop;y++) {
-        arr = [];
-        obj = {};
     }
     console.timeEnd('measure');
 
     console.time('measure');
     for(var y=0;y<loop;y++) {
-        arr = new Array;
-        obj = new Object;
     }
     console.timeEnd('measure');
 
-    // ----
 
-
-
-    /*
-    arr = [];
-    obj = {};
-より
-arr = new Array;
-obj = new Object;
-の方が7～40％早い
-*/
 
     /*
 

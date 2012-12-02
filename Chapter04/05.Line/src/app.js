@@ -36,15 +36,15 @@ Ext.onReady(function() {
         series: [{
             type: 'line',
             xField: 'name',
-            yField: 'data1'
+            yField: 'data1',
         }, {
             type: 'line',
             xField: 'name',
-            yField: 'data2'
+            yField: 'data2',
         }, {
             type: 'line',
             xField: 'name',
-            yField: 'data3'
+            yField: 'data3',
         }]
     });
 
