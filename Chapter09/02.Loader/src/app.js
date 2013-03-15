@@ -4,7 +4,8 @@ Ext.Loader.setConfig({
 
 Ext.onReady(function() {
 
-//    Ext.create(123, {});
+    Ext.create(123, {});
+    /*
     var p = Ext.create('Ext.panel.Panel', {
         title: 'Ext.Loader Debug',
         collapsed: true,
@@ -14,6 +15,7 @@ Ext.onReady(function() {
         renderTo: Ext.getBody()
     });
     p.hide();
+    */
 
 
 });

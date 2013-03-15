@@ -1,27 +1,17 @@
 Ext.define('MyApp.view.Viewport', {
     extend: 'Ext.container.Viewport',
+    requires: [
+        'MyApp.view.Header'
+    ],
     layout: {
         type: 'border'
     },
     items: [{
-        xtype: 'container',
+        xtype: 'myapp-header',
         region: 'north',
         height: 150
+    },{
+        xtype: 'container',
+        region: 'center'
     }]
-
-
-    initComponent: function() {
-        var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'container',
-                    region: 'center'
-                },
-            ]
-        });
-
-        me.callParent(arguments);
-    }
 });
